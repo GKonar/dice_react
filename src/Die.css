@@ -1,10 +1,27 @@
-.Die-box {}
-
 .Die {
-  font-size: 10rem;
-  color: #5758BB;
+  font-size: 11rem;
+  color: #30336b;
+  padding: 1.5rem 2rem;
 }
 
-/* @keyframes shake {
-  
-}   */
+.Die-animate {
+  animation: .5s shakeDice;
+}
+
+@keyframes shakeDice {
+  0% {
+    transform: translateX(-2rem) rotateZ(-10deg);
+  }
+
+  25% {
+    transform: translateX(2rem) rotateZ(5deg);
+  }
+
+  50% {
+    transform: translateX(-2rem) rotateZ(-5deg);
+  }
+
+  100% {
+    transform: translateX(0) rotateZ(0deg);
+  }
+}
