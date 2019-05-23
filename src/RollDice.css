@@ -3,7 +3,8 @@
   justify-content: center
 }
 
-.RollDice-btn {
+.RollDice-btn,
+.RollDice-waitBtn {
   border: none;
   background-color: rgb(82, 75, 172);
   margin-top: 3rem;
@@ -13,6 +14,11 @@
   color: #fff;
   font-family: inherit;
   font-size: 1rem;
+}
+
+.RollDice-waitBtn {
+  padding: 2rem 7.3rem;
+  background-color: #000;
 }
 
 .RollDice-btn:hover {

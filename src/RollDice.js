@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import Die from './Die';
 import './RollDice.css';
 
@@ -27,24 +26,35 @@ class RollDice extends Component {
 
 		setTimeout(() => {
 			this.setState({ isRolling: false });
-		}, 1000);
+		}, 500);
 	}
 
 	render() {
+		let button;
+		if (this.state.isRolling) {
+			button = (
+				<button className="RollDice-waitBtn" onClick={this.roll} disabled>
+					Rolling...
+				</button>
+			);
+		} else {
+			button = (
+				<button className="RollDice-btn" onClick={this.roll}>
+					Roll Roll Baby!
+				</button>
+			);
+		}
+
 		return (
 			<div className="RollDice">
 				<div className="RollDice-box">
 					<Die num={this.state.diceOne} roll={this.state.isRolling} />
 					<Die num={this.state.diceTwo} roll={this.state.isRolling} />
 				</div>
-				<button className="RollDice-btn" onClick={this.roll}>
-					Roll Roll Baby!
-				</button>
+				{button}
 			</div>
 		);
 	}
 }
 
 export default RollDice;
-
-// RollDice - a parent component (rendered by App) that renders the dice and a button to roll.

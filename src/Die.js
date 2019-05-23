@@ -3,7 +3,8 @@ import './Die.css';
 
 class Die extends Component {
 	render() {
-		const diceClass = `Die fas fa-dice-${this.props.num}`;
+		let diceClass = `Die fas fa-dice-${this.props.num}`;
+		if (this.props.roll) diceClass = `Die-animate ${diceClass}`;
 
 		return (
 			<div className="Die-box">
@@ -14,5 +15,3 @@ class Die extends Component {
 }
 
 export default Die;
-
-// Die - an individual die that takes props and displays the correct face of the die based on props.
