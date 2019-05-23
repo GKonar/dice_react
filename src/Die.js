@@ -3,8 +3,7 @@ import './Die.css';
 
 class Die extends Component {
 	render() {
-		let diceClass = `Die fas fa-dice-${this.props.num}`;
-		if (this.props.roll) diceClass = `Die-animate ${diceClass}`;
+		let diceClass = `Die fas fa-dice-${this.props.num} ${this.props.roll && 'Die-animate'}`;
 
 		return (
 			<div className="Die-box">

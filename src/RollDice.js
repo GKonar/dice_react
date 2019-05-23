@@ -6,8 +6,8 @@ class RollDice extends Component {
 	constructor(props) {
 		super();
 		this.state = {
-			diceOne: 'six',
-			diceTwo: 'six',
+			dieOne: 'six',
+			dieTwo: 'six',
 			isRolling: false
 		};
 		this.roll = this.roll.bind(this);
@@ -19,8 +19,8 @@ class RollDice extends Component {
 
 	roll() {
 		this.setState({
-			diceOne: this.props.diceNumArr[Math.floor(Math.random() * 6)],
-			diceTwo: this.props.diceNumArr[Math.floor(Math.random() * 6)],
+			dieOne: this.props.diceNumArr[Math.floor(Math.random() * 6)],
+			dieTwo: this.props.diceNumArr[Math.floor(Math.random() * 6)],
 			isRolling: true
 		});
 
@@ -48,8 +48,8 @@ class RollDice extends Component {
 		return (
 			<div className="RollDice">
 				<div className="RollDice-box">
-					<Die num={this.state.diceOne} roll={this.state.isRolling} />
-					<Die num={this.state.diceTwo} roll={this.state.isRolling} />
+					<Die num={this.state.dieOne} roll={this.state.isRolling} />
+					<Die num={this.state.dieTwo} roll={this.state.isRolling} />
 				</div>
 				{button}
 			</div>
